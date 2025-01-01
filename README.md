@@ -8,7 +8,11 @@ Add this to your **audio_effects.xml**:
 
 Also you need to address some SELinux denials in **audioserver.te**:
 
-    get_prop(audioserver, vendor_audio_prop)
-
     allow audioserver unlabeled:file { read write open getattr };
     allow hal_audio_default hal_audio_default:process { execmem };
+
+If you have a CPU based on 32-bit only, change from **Android.bp**:
+
+    compile_multilib: "64" to 32
+
+Else is not neccessary to do it, you should use 64-bit library!
