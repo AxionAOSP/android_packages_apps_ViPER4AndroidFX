@@ -12,6 +12,7 @@ android_app_import {
 
 cc_prebuilt_library_shared {
     name: "libv4a_re",
+    installable: true,
     strip: {
         none: true,
     },
@@ -23,9 +24,8 @@ cc_prebuilt_library_shared {
             srcs: ["vendor/lib64/soundfx/libv4a_re.so"],
         },
     },
-    compile_multilib: "64",
+    compile_multilib: "both",
     vendor: true,
-    installable: true,
     relative_install_path: "soundfx",
     check_elf_files: false,
 }
