@@ -37,6 +37,9 @@ cc_prebuilt_library_shared {
         "libm",
         "libdl",
     ],
+    required: [
+        "libviperaidl",
+    ],
     ignore_max_page_size: true,
     compile_multilib: "both",
     relative_install_path: "soundfx",
